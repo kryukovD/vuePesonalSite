@@ -2,7 +2,7 @@ import axios from 'axios'
 export const apiUrl=import.meta.env.VITE_API_SERVER;
 export const getTechnologies= async ()=>{
 try{
-   const responce=await axios.get(`${apiUrl}/getPortfolio`);
+   const responce=await axios.get(`${apiUrl}/api/getTechnologies`);
     return responce.data;
 }
 catch(e){
@@ -12,7 +12,7 @@ catch(e){
 
 export const getStack= async ()=>{
     try{
-       const responce=await axios.get(`${apiUrl}/getStack`);
+       const responce=await axios.get(`${apiUrl}/api/getStack`);
         return responce.data;
     }
     catch(e){
