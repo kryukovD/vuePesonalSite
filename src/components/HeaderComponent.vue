@@ -16,8 +16,6 @@ export default {
 
     document.addEventListener("click", (e) => {
       const withinBoundaries = e.composedPath().includes(div);
-      console.log(withinBoundaries);
-
       if (!withinBoundaries) {
         this.isActiveMenu = false;
       }

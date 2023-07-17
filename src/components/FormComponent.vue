@@ -1,6 +1,7 @@
 <script>
 import { email, required,helpers} from '@vuelidate/validators'
 import { useVuelidate } from '@vuelidate/core'
+import { sendRequestForm } from '../api'
 export default {
   setup: () => ({ v$: useVuelidate() }),
   data(){
@@ -25,10 +26,8 @@ export default {
   methods:{
    async submitForm(){
       const result = await this.v$.$validate()
-      console.log(this.v$.form.name.required);
-      if (!result) {
-        // notify user form is invalid
-        return
+      if (result) {
+       await sendRequestForm(this.form.name,this.form.email,this.form.message).data;
       }
     }
   }

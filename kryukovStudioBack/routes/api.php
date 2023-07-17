@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TechnologiesController;
+use App\Http\Controllers\RequestFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get("/getStack",[TechnologiesController::class,'getCategories']);
 Route::get("/getTechnologies",[TechnologiesController::class,'getTechnologies']);
+Route::post("/sendForm",[RequestFormController::class,'send']);
